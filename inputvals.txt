@@ -1,0 +1,2 @@
+"Write a very short {language} function that will {task}."
+"Write a test for the following {language} code:\n{code}"
