@@ -9,3 +9,5 @@ class HelperClass:
 	def return_random_array_elt(array):
 		return array[int(random.random() * 1000 % len(array))]
 
+	def concat_array(array) -> str:
+		return ",".join(array)
