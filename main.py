@@ -9,6 +9,9 @@ from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 from dotenv import load_dotenv
 import os
+from langchain.embeddings import OpenAIEmbeddings
+from langchain.text_splitter import CharacterTextSplitter
+from langchain.vectorstores import MongoDBAtlasVectorSearch
 
 from helpers import HelperClass
 
@@ -24,6 +27,9 @@ args = parser.parse_args()
 
 #prewritten lines will not be used by the ChatOpenAI model
 lines_array = HelperClass.read_file_into_array("inputvals.txt")
+facts_array = HelperClass.read_file_into_array("facts.txt")
+
+
 
 #-------------------------------------------------------------------------------------------
 

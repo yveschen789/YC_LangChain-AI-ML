@@ -61,7 +61,7 @@ chain = RetrievalQA.from_chain_type(
     retriever=retriever,
     chain_type="stuff"
 )
-print("Here")
+
 
 query = "What is an interesting fact about Golf"
 
@@ -69,12 +69,21 @@ results = vector_search.similarity_search_with_score(
     query=query,
     k=5,
 )
+print(results)
 
-for result in results:
-    print("\n")
-    print(result.page_content)
-
-
-result = chain.run("What is an interesting fact about Golf")
+result = chain.run("What is the only animal that cant jump")
 
 print(result)
+
+while True:
+    content = input(">> ")
+
+    match content:
+        case "quit":
+            break
+        case _:
+            result = chain.run(content)
+            print(result)
+
+
+
